@@ -1,19 +1,74 @@
-# React + Vite
+# 🚀 React + Vite + Supabase Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+![Preview](./public/screenshots/preview1.png)
+![Preview](./public/screenshots/preview2.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Простое и мощное Fullstack-приложение для управления задачами. Построено на современном стеке с использованием облачной базы данных.
 
-## React Compiler
+## 🛠 Стек технологий
+- **Frontend:** React 18, Vite
+- **Backend-as-a-Service:** [Supabase](https://supabase.com) (PostgreSQL + RLS)
+- **Deployment:** Vercel
+- **State Management:** React Hooks (useState, useEffect)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ⚡️ Особенности
+- **Real-time Database:** Мгновенное сохранение задач.
+- **Row Level Security (RLS):** Защита данных на уровне базы.
+- **Environment Variables:** Безопасное хранение ключей API.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# supabase
-# supabase
-# supabase
+
+
+
+## 🚀 Как запустить локально
+
+1. **Клонируйте репозиторий:**
+   ```bash
+   git clone https://github.com
+   cd supabase
+
+
+Установите зависимости:
+bash
+npm install
+
+
+Настройте переменные окружения:
+Создайте файл .env в корне проекта и добавьте свои ключи из Supabase:
+env
+VITE_SUPABASE_URL=your_project_url
+VITE_SUPABASE_ANON_KEY=your_anon_key
+
+
+Запустите проект:
+bash
+npm run dev
+
+
+🏗 Структура базы данных (Supabase)
+Таблица tasks:
+id: int8 (Primary Key)
+created_at: timestamptz
+title: text (Название задачи)
+is_completed: bool (Статус)
+user_id: uuid (Связь с auth.users)
+📝 Лицензия
+MIT
+
+---
+
+### Что сделать теперь в терминале:
+
+1.  **Сохрани файл** `README.md`.
+2.  **Добавь изменения и отправь их на GitHub:**
+    ```bash
+    git add README.md
+    git commit -m "docs: update readme with project info"
+    git push
+    ```
+
+### Финальный штрих для Vercel:
+Когда ты зайдешь в панель управления [Vercel](https://vercel.com), нажми **Add New -> Project**, выбери этот репозиторий и **ОБЯЗАТЕЛЬНО** в разделе **Environment Variables** добавь:
+*   `VITE_SUPABASE_URL`
+*   `VITE_SUPABASE_ANON_KEY`
