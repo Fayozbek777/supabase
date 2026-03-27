@@ -1,4 +1,4 @@
-# 🚀 React + Vite + Supabase Todo App
+# 🚀 React + Supabase Todo App
 
 
 ![Preview](./public/screenshots/preview1.png)
